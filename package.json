@@ -6,6 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.15.0",
+    "@sap-cloud-sdk/resilience": "^3.15.0",
     "@sap/cds": "^7",
     "express": "^4"
   },
@@ -16,13 +18,17 @@
     "eslint": "^9"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "dev": "cds watch"
   },
   "cds": {
     "requires": {
       "API_SALES_ORDER_SRV": {
         "kind": "odata-v2",
-        "model": "srv/external/API_SALES_ORDER_SRV"
+        "model": "srv/external/API_SALES_ORDER_SRV",
+        "credentials": {
+          "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_SALES_ORDER_SRV"
+        }
       }
     }
   }
