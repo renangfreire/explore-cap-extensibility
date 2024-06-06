@@ -35,4 +35,8 @@ module.exports = async (srv) => {
 
         return salesReport
     })
+
+    srv.on('error', (error, req) => {
+        console.log(error)
+    }) 
 }
